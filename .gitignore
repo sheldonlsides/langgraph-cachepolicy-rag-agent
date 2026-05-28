@@ -1,0 +1,11 @@
+.env
+.claude/
+.mcp.json
+claude.md
+CLAUDE.md
+.DS_Store
+**/.DS_Store
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/

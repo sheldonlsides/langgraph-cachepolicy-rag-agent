@@ -1,0 +1,35 @@
+[project]
+name = "lang-graph-cache-rag-policy"
+version = "1.0.0"
+description = "Learn to build a LangGraph ReAct RAG agent that uses tools, then boost its performance by caching tool calls with LangGraph's CachePolicy."
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+license-files = ["LICENSE"]
+
+authors = [
+    { name = "Sheldon Sides", email = "1333051+sheldonlsides@users.noreply.github.com" },
+]
+
+dependencies = [
+    "faiss-cpu>=1.13.2",
+    "ipykernel>=7.2.0",
+    "ipywidgets>=8.1.8",
+    "langchain>=1.3.1",
+    "langchain-community>=0.4.1",
+    "langchain-core>=1.3.2",
+    "langchain-huggingface>=1.2.2",
+    "langchain-openai>=1.2.1",
+    "langchain-text-splitters>=1.1.2",
+    "langgraph>=1.2.0",
+    "langsmith>=0.8.5",
+    "pydantic>=2.0",
+    "python-dotenv>=1.2.2",
+    "sentence-transformers>=5.4.1",
+    "wikipedia>=1.4.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/sheldonlsides/langgraph-cachepolicy-rag-agent"
+Repository = "https://github.com/sheldonlsides/langgraph-cachepolicy-rag-agent"
+Issues = "https://github.com/sheldonlsides/langgraph-cachepolicy-rag-agent/issues"
