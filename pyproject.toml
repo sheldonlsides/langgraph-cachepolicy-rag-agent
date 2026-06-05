@@ -1,7 +1,7 @@
 [project]
 name = "lang-graph-cache-rag-policy"
 version = "1.0.0"
-description = "Learn to build a LangGraph ReAct RAG agent that uses tools, then boost its performance by caching tool calls with LangGraph's CachePolicy."
+description = "Learn to build a LangGraph ReAct RAG agent that boosts its performance by caching tool calls with LangGraph's CachePolicy."
 readme = "README.md"
 requires-python = ">=3.12"
 license = "MIT"
