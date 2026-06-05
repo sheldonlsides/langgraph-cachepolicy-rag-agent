@@ -1,0 +1,59 @@
+name: Bug report
+description: Something in the notebook or setup does not work as documented.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to file a report. Please run the cell end to end once before submitting, the notebook is the source of truth.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: A clear description of the problem.
+      placeholder: The cached run raised an OpenAI 400 instead of returning an answer.
+    validations:
+      required: true
+  - type: input
+    id: section
+    attributes:
+      label: Notebook section or cell
+      description: Which section heading or cell were you on? (for example "## 6. Cache the tools step")
+      placeholder: "## 10. Verify the cache claim"
+    validations:
+      required: false
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected vs actual
+      description: What did you expect, and what did you get instead?
+    validations:
+      required: true
+  - type: textarea
+    id: traceback
+    attributes:
+      label: Traceback or error output
+      description: Paste the full traceback. This is automatically formatted as code, no backticks needed.
+      render: shell
+    validations:
+      required: false
+  - type: input
+    id: versions
+    attributes:
+      label: uv and Python version
+      description: Output of `uv --version` and `python --version`.
+      placeholder: "uv 0.5.x, Python 3.12.x"
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options:
+        - macOS
+        - Linux
+        - Windows
+        - Google Colab
+    validations:
+      required: true

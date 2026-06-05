@@ -1,0 +1,32 @@
+name: Question
+description: Ask about how the lesson, the CachePolicy setup, or the agent works.
+title: "[Question]: "
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Questions about the tutorial are welcome. Please check the README and the notebook's Architecture notes first, they cover most of the common ones.
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+      description: What would you like to understand?
+      placeholder: Why is the cache attached to tools_fetch and not the agent node?
+    validations:
+      required: true
+  - type: textarea
+    id: tried
+    attributes:
+      label: What you already tried or read
+      description: Which sections of the notebook or README have you looked at?
+    validations:
+      required: false
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Local uv or Colab, plus Python version if relevant.
+      placeholder: "Local uv, Python 3.12"
+    validations:
+      required: false

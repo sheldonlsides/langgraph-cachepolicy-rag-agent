@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Read the tutorial first
+    url: https://github.com/sheldonlsides/langgraph-cachepolicy-rag-agent#readme
+    about: The README and the notebook's Architecture notes answer most setup and CachePolicy questions.

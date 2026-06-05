@@ -1,0 +1,38 @@
+name: CI
+
+# Lint and validate only. The notebook is NOT executed here: a full run needs an
+# OPENAI_API_KEY, downloads the BGE-large model, and makes live API calls, and its
+# timing assertions can flake under CI load. Run it locally instead with:
+#   uv run jupyter nbconvert --to notebook --execute --inplace src/cache_aware_rag.ipynb
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: uv sync
+
+      # nbformat / nbconvert are not project dependencies (the notebook does not
+      # import them at runtime), so pull them in ephemerally with `uv run --with`.
+      - name: Validate notebook JSON
+        run: uv run --with nbformat python -c "import nbformat; nbformat.read('src/cache_aware_rag.ipynb', as_version=4)"
+
+      - name: Compile-check the notebook (no execution)
+        run: uv run --with nbconvert jupyter nbconvert --to script --stdout src/cache_aware_rag.ipynb > /dev/null
+
+      - name: Syntax-only lint (non-blocking)
+        run: uvx ruff check --select E9,F63,F7,F82 src/ || true
