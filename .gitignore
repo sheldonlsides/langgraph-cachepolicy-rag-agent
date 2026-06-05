@@ -1,4 +1,9 @@
 .env
+# Secrets / keys
+.env.*
+!.env.example
+*.pem
+*.key
 .claude/
 .mcp.json
 claude.md
